@@ -34,7 +34,6 @@ const Page = () => {
 
   return (
     <div id="background" className="relative overflow-hidden bg-[#101828] min-h-screen flex flex-col justify-between text-white">
-      {/* Floating Circles Background */}
       <div className="absolute top-0 left-0 w-full h-full z-[-1]">
         <div className="circle bg-white opacity-20 animate-float w-[250px] h-[250px] rounded-full absolute top-[10%] left-[20%]"></div>
         <div className="circle bg-white opacity-20 animate-float w-[300px] h-[300px] rounded-full absolute top-[50%] left-[70%]"></div>
@@ -43,7 +42,7 @@ const Page = () => {
 
       <div className="min-w-[80%] mx-auto my-12 bg-[#1E2939] rounded-3xl p-8 shadow-xl backdrop-blur-md">
         <header className="text-center mb-10">
-          <h1 className="text-5xl font-bold mb-4">Programmers</h1>
+          <h1 className="text-5xl font-bold mb-4">Questions</h1>
         </header>
 
         <main className="space-y-8">
@@ -73,7 +72,8 @@ const Page = () => {
       <footer className="bg-gradient-to-r from-[#0e0f4c] via-[#2c3e50] to-[#34495e] backdrop-blur-md mt-10 p-8 rounded-t-3xl shadow-inner">
   <div className="flex flex-col items-center space-y-4">
     <img
-      src="/images/hod_photo.jpg"
+      src="
+https://res-console.cloudinary.com/dzsjqo68q/thumbnails/v1/image/upload/v1746176484/cnZpbnBtenk3ZDhrbGtoamx6d24=/grid_landscape"
       alt="HOD Mam"
       className="w-28 h-28 rounded-full border-4 border-indigo-400 shadow-lg object-cover"
     />
@@ -81,7 +81,7 @@ const Page = () => {
       <p className="text-gray-300 text-lg font-sans">Special Thanks to</p>
       <h3 className="text-gray-100 text-2xl font-bold mt-1 font-serif">Epsiba Mam</h3>
       <p className="text-gray-300 text-md mt-2 font-sans">
-        Designed by: <span className="font-semibold text-teal-400">Ganesh baby, Jashwanth</span>
+        Designed by: <span className="font-semibold text-teal-400">Ganesh 💕, Jashwanth,Charan</span>
       </p>
       <p className="text-gray-300 text-md mt-2 font-sans">
         Developed by: <span className="font-semibold text-teal-400">Vijay</span>

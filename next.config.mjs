@@ -4,8 +4,8 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/login',
-        permanent: false, // use true if it's a permanent redirect
+        destination: '/intro',
+        permanent: true, 
       },
     ];
   },

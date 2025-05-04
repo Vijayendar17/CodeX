@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "bcryptjs": "^3.0.2",
     "crypto": "^1.0.1",
     "mongoose": "^8.14.0",

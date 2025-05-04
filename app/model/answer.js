@@ -2,15 +2,16 @@ import mongoose from "mongoose";
 
 const AnswerSchema = new mongoose.Schema({
   questionId: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Question',  
     required: true
   },
   answer: {
     type: String,
     required: true
   },
-  studentId: {  
-    type: String,  
+  studentId: {
+    type: String,
     required: true
   },
   submittedAt: {

@@ -124,7 +124,7 @@ const QuestionDetailPage = () => {
   }
 
   return (
-    <div className="h-screen w-screen bg-gray-900 text-white flex flex-col">
+    <div className="min-h-screen w-screen bg-gray-900 text-white flex flex-col">
       {submitError && (
         <div className="bg-red-900 text-white p-4 text-center">
           Error: {submitError}

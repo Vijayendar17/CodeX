@@ -1,13 +1,12 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
-export default function LoginPage() {
+export default function Home() {
   const router = useRouter();
-
   const [studentId, setStudentId] = useState("");
-  const [password] = useState("12345678"); 
+  const [password, setPassword] = useState("12345678");
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
@@ -31,7 +30,7 @@ export default function LoginPage() {
 
       if (data.success) {
         toast.success("Login successful!");
-        router.push("/home"); 
+        router.push("/home");
       } else {
         toast.error(data.message || "Invalid credentials!");
       }
@@ -39,51 +38,68 @@ export default function LoginPage() {
       console.error(error);
       toast.error("Something went wrong!");
     }
+
     setLoading(false);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form 
-        onSubmit={handleLogin} 
-        className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+    <>
+      <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
 
-        <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700">
-            Student ID
-          </label>
-          <input
-            type="text"
-            value={studentId}
-            onChange={(e) => setStudentId(e.target.value)}
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-            placeholder="Enter your Student ID"
-          />
+      <div className="min-h-screen flex items-center justify-center ">
+        <div className="w-full max-w-md rounded-xl shadow-xl overflow-hidden  border-gray-700">
+          <div className="bg-black-700  ">
+            {/* <h1 className="text-2xl font-bold text-white tracking-tight">
+              <span className="text-violet-400">CODE</span>
+              <span className="text-gray-300">X</span>
+            </h1> */}
+            {/* <img src="https://res.cloudinary.com/dl2dd2gyl/image/upload/v1746361925/IMG_7633_z1imge.png" alt="" /> */}
+            <img
+  src="https://res.cloudinary.com/dl2dd2gyl/image/upload/v1746361925/IMG_7633_z1imge.png"
+  alt="logo"
+  className="w-40 object-contain mx-auto "
+/>
+
+          </div>
+
+          <div className="px-8 py-5">
+            <form onSubmit={handleLogin} className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Student ID
+                </label>
+                <input
+                  type="text"
+                  value={studentId}
+                  onChange={(e) => setStudentId(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                  placeholder="Please enter your student ID"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                  placeholder="••••••••"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 px-4 bg-purple-400 hover:bg-white text-black font-semibold rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+              >
+                {loading ? "Logging in..." : "Login"}
+              </button>
+            </form>
+          </div>
         </div>
-
-        <div className="mb-6">
-          <label className="block mb-2 text-sm font-medium text-gray-700">
-            Password
-          </label>
-          <input
-            type="password"
-            value={password}
-            readOnly 
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-            placeholder="12345678"
-          />
-        </div>
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
-        >
-          {loading ? "Logging in..." : "Login"}
-        </button>
-      </form>
-    </div>
+      </div>
+    </>
   );
 }

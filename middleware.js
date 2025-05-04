@@ -2,11 +2,10 @@ import { NextResponse } from 'next/server'
 
 export async function middleware(request) {
   const url = request.nextUrl.clone()
-  
-  // Corrected the cookie name to match your login API
   const sessionToken = request.cookies.get('session_id')?.value
-  
-  if (url.pathname === '/login') {
+
+  // Redirect logged-in users away from login or intro page
+  if (url.pathname === '/login' || url.pathname === '/intro') {
     if (sessionToken) {
       url.pathname = '/home'
       return NextResponse.redirect(url)
@@ -19,7 +18,8 @@ export async function middleware(request) {
 export const config = {
   matcher: [
     '/login',
+    '/intro',         
     '/home/:path*',
-    '/api/:path*'
-  ]
+    '/api/:path*',
+  ],
 }
