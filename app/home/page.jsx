@@ -72,8 +72,7 @@ const Page = () => {
       <footer className="bg-gradient-to-r from-[#0e0f4c] via-[#2c3e50] to-[#34495e] backdrop-blur-md mt-10 p-8 rounded-t-3xl shadow-inner">
   <div className="flex flex-col items-center space-y-4">
     <img
-      src="
-https://res-console.cloudinary.com/dzsjqo68q/thumbnails/v1/image/upload/v1746176484/cnZpbnBtenk3ZDhrbGtoamx6d24=/grid_landscape"
+      src="https://res.cloudinary.com/dzsjqo68q/image/upload/v1746176484/rvinpmzy7d8klkhjlzwn.png"
       alt="HOD Mam"
       className="w-28 h-28 rounded-full border-4 border-indigo-400 shadow-lg object-cover"
     />
