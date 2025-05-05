@@ -99,7 +99,7 @@ const Page = () => {
             We thank our HOD and the entire teaching faculty for encouraging innovation and technical excellence among students.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-400 text-sm">
-            {["L.Vijay", "Ch.Jashwanth", "Ch.Ganesh", "Ch.Charan"].map((name, idx) => (
+            {["L.Vijay", "Ch.Ganesh", "Ch.Charan"].map((name, idx) => (
               <div key={idx}>
                 <strong>{name}</strong>
               </div>
