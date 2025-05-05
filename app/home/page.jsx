@@ -80,7 +80,7 @@ const Page = () => {
       <p className="text-gray-300 text-lg font-sans">Special Thanks to</p>
       <h3 className="text-gray-100 text-2xl font-bold mt-1 font-serif">Epsiba Mam</h3>
       <p className="text-gray-300 text-md mt-2 font-sans">
-        Designed by: <span className="font-semibold text-teal-400">Ganesh 💕, Jashwanth,Charan</span>
+        Designed by: <span className="font-semibold text-teal-400">Ganesh,Charan</span>
       </p>
       <p className="text-gray-300 text-md mt-2 font-sans">
         Developed by: <span className="font-semibold text-teal-400">Vijay</span>
