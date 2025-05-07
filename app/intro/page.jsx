@@ -10,58 +10,84 @@ const Page = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
+  const importanceItems = [
+    {
+      title: "Skill Growth",
+      desc: "Daily problem-solving improves logical thinking and coding speed.",
+    },
+    {
+      title: "Recognition",
+      desc: "Top performers gain recognition from department staff and HOD.",
+    },
+    {
+      title: "Career Value",
+      desc: "Great for resume-building and securing internships or placements.",
+    },
+  ];
+
+  const contributors = ["L.Vijay", "Ch.Jashwanth", "Ch.Ganesh", "Ch.Charan"];
+
   return (
-    <div className="bg-gray-900 text-white font-sans">
+    <div className="bg-black text-white font-sans">
       <Head>
         <title>Code X | Challenge Platform</title>
         <meta name="description" content="Practice competitive coding and grow with Code X." />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Header */}
-      <header className="w-full p-4 bg-gray-900 flex items-center">
-        {/* <img
-          src=""
-          alt="Code X Logo"
-          className="h-10 w-auto"
-        /> */}
-        <h1 className="text-xl font-bold text-white tracking-widest ml-4">CODE <strong className="text-blue-300">X</strong></h1>
+      <header className="w-full p-4 bg-black flex items-center" role="banner">
+        <h1 className="text-xl font-bold text-white tracking-widest ml-4">
+          CODE
+          <strong className="text-blue-300 text-2xl">
+            X<sup className="text-sm align-super">2</sup>
+          </strong>
+        </h1>
       </header>
 
       {/* Page 1: Intro */}
-      <section id="intro" className="px-6 md:px-20 min-h-screen flex items-center justify-center flex-col gap-96" data-aos="fade-up">
-        <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
-          <img src="https://res.cloudinary.com/dl2dd2gyl/image/upload/v1746364201/ChatGPT_Image_May_4_2025_05_24_18_PM_fhdqfa.png" alt="Intro banner" className="rounded-xl shadow-lg w-full" />
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Welcome to Code X</h2>
-            <p className="text-lg text-gray-300">
-              Code X is a challenge-based platform designed for students to practice competitive coding, improve problem-solving skills, and showcase talent among peers and faculty.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section
+        id="intro"
+        className="px-6 md:px-20 min-h-screen flex items-center justify-center flex-col gap-20"
+        data-aos="fade-up"
+      >
+        <video
+          src="https://res.cloudinary.com/dl2dd2gyl/video/upload/v1746524429/codex_ga6teh.mp4"
+          autoPlay
+          muted
+          loop
+          className="rounded-lg shadow-xl w-full max-w-3xl"
+        ></video>
 
-      {/* Rotating X Logo */}
-      <div className="w-full h-[40vh] flex items-center justify-center" data-aos="zoom-in">
         <h1
-          className="text-[100px] font-bold"
+          className="text-[100px] font-bold text-center"
           style={{ fontFamily: "Montserrat, sans-serif" }}
+          data-aos="zoom-in"
         >
           Code
-          <span className="inline-block ml-6 text-blue-400 animate-rotate-x origin-center">X</span>
+          <span className="inline-block ml-6 text-blue-600 animate-rotate-x origin-center">X</span>
+          
         </h1>
-      </div>
+      </section>
 
       {/* Page 2: Importance */}
-      <section id="importance" className="bg-gray-800 px-6 md:px-20 min-h-screen flex items-center justify-center flex-col" data-aos="fade-up">
+      <section
+        id="importance"
+        className="bg-black px-6 md:px-20 min-h-screen flex items-center justify-center flex-col"
+        data-aos="fade-up"
+      >
         <div className="max-w-6xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Why Code X?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "Skill Growth", desc: "Daily problem-solving improves logical thinking and coding speed." },
-              { title: "Recognition", desc: "Top performers gain recognition from department staff and HOD." },
-              { title: "Career Value", desc: "Great for resume-building and securing internships or placements." },
-            ].map((item, idx) => (
-              <div key={idx} className="bg-gray-700 p-8 rounded-2xl shadow hover:scale-105 transition">
+            {importanceItems.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-gray-700 p-8 rounded-2xl shadow hover:scale-105 transition"
+              >
                 <h3 className="text-2xl font-semibold text-blue-300 mb-4">{item.title}</h3>
                 <p className="text-gray-300">{item.desc}</p>
               </div>
@@ -69,7 +95,8 @@ const Page = () => {
           </div>
           <div className="mt-12 text-gray-400 text-lg max-w-4xl mx-auto">
             <p>
-              With structured contests and a leaderboard, Code X brings out the best in every coder while preparing them for real-world tech roles.
+              With structured contests and a leaderboard, Code X brings out the best in every coder
+              while preparing them for real-world tech roles.
             </p>
           </div>
           <div className="mt-8">
@@ -85,7 +112,11 @@ const Page = () => {
       </section>
 
       {/* Page 3: Credits */}
-      <section id="credits" className="px-6 md:px-20 bg-gray-900 min-h-screen flex items-center justify-center flex-col" data-aos="fade-up">
+      <section
+        id="credits"
+        className="px-6 md:px-20 bg-black min-h-screen flex items-center justify-center flex-col"
+        data-aos="fade-up"
+      >
         <div className="max-w-4xl w-full flex flex-col items-center">
           <div className="w-60 h-60 bg-blue-400 rounded-full border-8 border-blue-600 shadow-xl mb-10 overflow-hidden">
             <img
@@ -94,12 +125,13 @@ const Page = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <h2 className="text-3xl font-bold text-white mb-4">Thanks to Our HOD  Mam</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Special Thanks to Our HOD Ma'am</h2>
           <p className="text-lg text-gray-300 mb-10 text-center">
-            We thank our HOD and the entire teaching faculty for encouraging innovation and technical excellence among students.
+            We thank our HOD and the entire teaching faculty for encouraging innovation and
+            technical excellence among students.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-400 text-sm">
-            {["L.Vijay", "Ch.Ganesh", "Ch.Charan"].map((name, idx) => (
+            {contributors.map((name, idx) => (
               <div key={idx}>
                 <strong>{name}</strong>
               </div>
