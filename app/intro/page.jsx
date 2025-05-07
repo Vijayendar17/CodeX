@@ -61,6 +61,7 @@ const Page = () => {
           muted
           loop
           className="rounded-lg shadow-xl w-full max-w-3xl"
+          poster="/fallback.jpg"
         ></video>
 
         <h1
@@ -68,9 +69,8 @@ const Page = () => {
           style={{ fontFamily: "Montserrat, sans-serif" }}
           data-aos="zoom-in"
         >
-          Code
-          <span className="inline-block ml-6 text-blue-600 animate-rotate-x origin-center">X</span>
-          
+          Code X
+          <sup className="inline-block ml-3 text-blue-600 animate-rotate-x origin-center">2</sup>
         </h1>
       </section>
 
@@ -145,16 +145,23 @@ const Page = () => {
         html {
           scroll-behavior: smooth;
         }
-        @keyframes rotateX {
+
+        @keyframes rotateXPower {
           0% {
-            transform: rotate(0deg);
+            transform: perspective(400px) rotateX(0deg) scale(1);
+          }
+          50% {
+            transform: perspective(400px) rotateX(180deg) scale(1.3);
           }
           100% {
-            transform: rotate(360deg);
+            transform: perspective(400px) rotateX(360deg) scale(1);
           }
         }
+
         .animate-rotate-x {
-          animation: rotateX 3s linear infinite;
+          display: inline-block;
+          animation: rotateXPower 2s ease-in-out infinite;
+          transform-origin: center;
         }
       `}</style>
     </div>
